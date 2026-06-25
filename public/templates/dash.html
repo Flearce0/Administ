@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link defer href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--CSS/JS Links-->
+    <link rel="stylesheet" href="/styles/dash.css">
+    <script type="module" src="dist/card_controls.js" defer></script>
+    <script type="module" src="dist/time_related.js" defer></script>
+    <script type="module" src="dist/reminders_control.js" defer></script>
+    <script type="module" src="dist/top_row_cards.js" defer></script>
+    <!--Icon-->
+    <link rel="shortcut icon" href="images/Administ_Logo.svg" type="image/x-icon">
+    <title>Dashboard</title>
+</head>
+
+<body id="body_html_ID">
+    <nav>
+        <!--Side bar-->
+        <div class="offcanvas offcanvas-start bg_black_bit_transparent" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="images/Administ_Logo.svg" alt="Administ_Logo" style="width: 3vw; height: auto;">
+                <h5 class="offcanvas-title ms-2" style="font-size: 1vw;" id="offcanvasExampleLabel">Administ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!--Seperation Line-->
+            <div class="mt-2 mb-2 white_to_black_line" style="width: 100%;"></div>
+            <div class="offcanvas-body">
+                <a class="" href="">
+                    <div class="row">
+                        <div class="col-3">
+                            <img style="width: 1vw;" src="images/Administ_Logo.svg" alt="Administ_Logo">
+                        </div>
+                        <div class="col-9">
+                            <h5>My DashBoard</h5>
+                        </div>
+                    </div>
+                </a>
+                <!--Seperation Line-->
+                <div class="mt-2 mb-2 black_to_white_to_black_line" style="width: 100%"></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!--Side bar button-->
+        <div class="side_bar_area">
+            <a class="btn side_bar_button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                >
+            </a>
+        </div>
+        <!-- Top Row -->
+        <div class="container-fluid pt-1">
+            <div class="row">
+                <p class="mb-2 text-nowrap pt-4 ps-1 font-w">Administ / MyDashboard</p>
+                <h5 id="title_txt_ID" class="fw-bold ps-1 pb-2">Dashboard</h5>
+            </div>
+        </div>
+        <!-- Top Cards -->
+        <div class="container-fluid mb-3">
+            <div class="row w-auto d-flex justify-content-center" style="gap: 1vw;">
+                <!--Date Card-->
+                <div class="col-md-3 glass-card">
+                    <div class="row mb-1">
+                        <div class="col-6">
+                            <p class="mb-0 mt-1 fw-bold">Date:</p>
+                            <h2 id="date_card_area_ID" class="top_cards_inner_format"></h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img class="invert_to_white" src="images/calendar-check.svg" alt="calendar-check"
+                                style="width: 2dvw; height: auto;">
+                        </div>
+                    </div>
+                </div>
+                <!--Deadline Card-->
+                <div class="col-md-3 glass-card">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-0 mt-1 fw-bold">Next Deadline:</p>
+                            <h2 class="top_cards_inner_format text-nowrap">Physics ASMT - 2d</h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img class="invert_to_white" src="images/calendar-minus.svg" alt="calendar-minus"
+                                style="width: 2dvw; height: auto;">
+                        </div>
+                    </div>
+                </div>
+                <!--Task Today Card-->
+                <div class="col-md-3 glass-card">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-0 mt-1 fw-bold text-nowrap">Tasks Completed Today:</p>
+                            <h2 class="top_cards_inner_format">1</h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img class="invert_to_white" src="images/pencil.svg" alt="pencil"
+                                style="width: 2dvw; height: auto;">
+                        </div>
+                    </div>
+                </div>
+                <!-- Task Week Card -->
+                <div class="col-md-3 glass-card">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-0 mt-1 fw-bold text-nowrap">Task Completed This Week:</p>
+                            <h2 id="" class="top_cards_inner_format">2</h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img class="invert_to_white" src="images/pencil-fill.svg" alt="pencil-fill"
+                                style="width: 2dvw; height: auto;">
+                        </div>
+                    </div>
+                </div>
+                <!--Task Remaining Card-->
+                <div class="col-md-3 glass-card">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-0 mt-1 fw-bold text-nowrap">Tasks Remaining:</p>
+                            <h2 id="tasks_remaining_ID" class="top_cards_inner_format mb-0"></h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img class="invert_to_white" src="images/list-task.svg" alt="list-task"
+                                style="width: 2dvw; height: auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Task Area, Reminders, Routines -->
+                <div class="col-md-9">
+                    <div>
+                        <h1 class="text-nowrap font-w" style="width: 3vw; font-size: 40px;" id="msg_time_change_id">
+                        </h1>
+                    </div>
+                    <!--Task Board-->
+                    <div id="time_change_bg_id" class="container-fluid task_area_structure">
+                        <div class="row" style="overflow: hidden;">
+                            <h1 class="mb-0" style="font-size: 45px;">Current Tasks:</h1>
+                            <!--Seperation Line-->
+                            <div class="ms-3 white_line" style="width: 30%;"></div>
+                            <div class="row flex-nowrap" style="overflow-x: scroll;" id="task_area_id">
+                                <!-- Card Template -->
+                                <div class="glass-card ms-s2">
+                                    <!--Edit Button-->
+                                    <div class="dropdown w-100 mt-2" style="position: absolute;">
+                                        <div class="pe-4 d-flex justify-content-end">
+                                            <a class="dropdown-toggle" data-bs-toggle="dropdown"
+                                                data-bs-auto-close="outside" aria-expanded="false" href="">
+                                                <img src="images/three-dots-vertical.svg" alt="">
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" role="button" data-bs-toggle="modal"
+                                                        data-bs-target="#card_add_modal_ID">Edit</a></li>
+                                                <li><a class="dropdown-item" role="button" data-bs-toggle="modal"
+                                                        data-bs-target="#card_info_modal_ID">Info</a></li>
+                                                <li><a class="dropdown-item" href="/">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Title and Description-->
+                                    <h2 class="mb-1" style="margin-top: 7px; font-size: 35px;">Task 345</h2>
+                                    <p class="me-4 font-s">Description of task</p>
+                                    <!--Tags of task-->
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 ms-2 tag_scheduled">
+                                            <p class="font-xs text-nowrap mb-1 mt-1 me-1 ms-1">Due: Today</p>
+                                        </div>
+                                        <div class="col-md-6 ms-2 me-2 tag_critical">
+                                            <p class="font-xs text-nowrap mb-1 mt-1 me-1 ms-1">Priority: Critical</p>
+                                        </div>
+                                    </div>
+                                    <!--Progress Bar-->
+                                    <div class="progress" style="border: solid 1px rgba(255, 255, 255, 0.2)"
+                                        role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                            style="width: 25%;">25%</div>
+                                    </div>
+                                    <!--Seperation Line-->
+                                    <div class="d-flex justify-content-center mt-2 mb-2 white_line"></div>
+                                    <!--Image of task-->
+                                    <div class="row d-flex justify-content-center mb-2">
+                                        <img src="images/Administ_Logo.svg" alt="Administ_Logo"
+                                            style="width: 130px; height: auto;">
+                                    </div>
+                                    <div class="row d-flex justify-content-end">
+                                        <button type="button" class="btn btn-success fw-bold w-50 mb-2 me-2"
+                                            style="border: solid 1px rgba(0, 200, 0, 0.628);">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button Row-->
+                    <div class="row d-flex justify-content-end mt-2 mb-3">
+                        <button id="error_msg_remove_id" type="button" class="btn btn-primary me-3 fs-5"
+                            style="width: 10vw; height: 45px;" data-bs-toggle="modal"
+                            data-bs-target="#card_edit_backdrop">+ Add
+                            Task</button>
+                    </div>
+                    <!--Reminder and Routine Block-->
+                    <div class="container-fluid mb-3">
+                        <div class="row">
+                            <!--Reminder-->
+                            <div class="col-md-6 bg_black_transparent pd-2">
+                                <h1 class="mt-2">Reminders:</h1>
+                                <!--Seperation Line-->
+                                <div class="mt-2 mb-3 white_to_black_line" style="width: 30%;"></div>
+                                <!-- Reminder Area -->
+                                <div id="reminder_area_ID" class="bg_black_solid mb-2 overflow-y"
+                                    style="height: 288px;">
+                                    <!-- Reminder Div Section -->
+                                </div>
+                                <!--Reminder Button-->
+                                <div class="row d-flex justify-content-end mt-2 mb-3">
+                                    <button type="button" class="btn btn-primary me-3 mt-1 fs-5 flex-nowrap"
+                                        style="width: 12vw; height: 45px;" data-bs-toggle="modal"
+                                        data-bs-target="#reminder_add_modal_ID">+ Add Reminder</button>
+                                </div>
+                            </div>
+                            <!--Routine-->
+                            <div class="col-md-6 bg_black_transparent">
+                                <h1 class="mt-2">Current Routine Block:</h1>
+                                <!--Seperation Line-->
+                                <div class="mt-2 mb-3 white_to_black_line" style="width: 30%;"></div>
+                                <ul class="list-group mb-3">
+                                    <li
+                                        class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <h4 class="fw-bold mt-1">Routine Block 1</h4>
+                                        </div>
+                                        <span class="badge text-bg-primary rounded-pill">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <h4 class="fw-bold mt-1">Routine Block 2</h4>
+                                        </div>
+                                        <span class="badge text-bg-primary rounded-pill">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto font-w">
+                                            <h2 class="fw-bold mb-2">Routine Block 3</h2>
+                                            <p class="mb-2">Routine block now do this and that</p>
+                                        </div>
+                                        <span class="badge text-bg-primary rounded-pill">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <h4 class="fw-bold mt-1">Routine Block 4</h4>
+                                        </div>
+                                        <span class="badge text-bg-primary rounded-pill">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <h4 class="fw-bold mt-1">Routine Block 5</h4>
+                                        </div>
+                                        <span class="badge text-bg-primary rounded-pill">1</span>
+                                    </li>
+                                </ul>
+                                <!--Button-->
+                                <div class="row d-flex justify-content-end mt-2 mb-3">
+                                    <button type="button" class="btn btn-primary me-3 fs-5"
+                                        style="width: 10vw; height: 45px;">Edit Routine</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ranks, To-do list -->
+                <div class="col-md-3">
+                    <div class="container-fluid bg_black_transparent">
+                        <div class="row d-flex justify-content-center">
+                            <h1 class="pt-1">Rank Today:</h1>
+                            <div id="rank_area_ID"
+                                class="container-fluid d-flex justify-content-center mt-2 mb-2 bg_black_solid"
+                                style="width: 90%;"></div>
+                            <!--Seperation Line-->
+                            <div class="mt-2 mb-2 white_line" style="width: 90%;"></div>
+                            <!--Todo List-->
+                            <h1>Today's Todo:</h1>
+                            <div class="container-fluid bg_black_transparent mb-3" style="width: 95%;">
+                                <div id="todo_area_ID" class="overflow-y" style="height: 49.5rem;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- --------------------------------------------- MODALS SECTION ----------------------------------------------- -->
+
+    <!-- Card Add Modal -->
+    <div class="modal fade" id="card_edit_backdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="staticBackdropLabel">Add/Edit Card</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form action="none">
+                                    <!-- Title of input-->
+                                    <label for="task_title_ID">Title of Task:</label><br>
+                                    <input class="w-100" type="text" id="task_title_ID" name="fname"
+                                        placeholder="Title"><br>
+                                    <!-- Desc of input-->
+                                    <label class="mt-2" for="task_desc_ID">Description of Task:</label><br>
+                                    <textarea class="w-100" type="text" id="task_desc_ID" name="Description"
+                                        rows="3"></textarea><br><br>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <!-- Deadline of input-->
+                                            <label for="task_deadline_ID">Deadline of Task:</label><br>
+                                            <select id="task_deadline_ID">
+                                                <option value="Today">Today</option>
+                                                <option value="Tomorrow">Tomorrow</option>
+                                                <option value="This Week">This Week</option>
+                                                <option value="Next Week">Next Week</option>
+                                                <option value="This Month">This Month</option>
+                                            </select><br><br>
+                                        </div>
+                                        <div class="col-6">
+                                            <!-- Title of input-->
+                                            <label for="task_priority_ID">Priority of the Task:</label><br>
+                                            <select id="task_priority_ID">
+                                                <option value="Must">Must</option>
+                                                <option value="Critical">Critical</option>
+                                                <option value="Scheduled">Scheduled</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Someday">Someday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div id="add_task_error_area_ID"></div>
+
+                                <div class="white_line w-100 mb-3"></div>
+                                <div class="row ms-1 w-100"
+                                    style="background-color: rgb(44, 44, 44); border-radius: 5px;">
+                                    <h2 class="mt-2">Notes:</h2>
+                                    <ul class="ms-3">
+                                        <li>Must = First Priority, must do</li>
+                                        <li>Critical = First Priority, ASAP</li>
+                                        <li>Scheduled = First Priority, do later</li>
+                                        <li>Pending = Second Priority, ASAP</li>
+                                        <li>Someday = Second Priority, do later</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Card Template -->
+                                <div class="glass-card ms-s2">
+                                    <!--Edit Button-->
+                                    <div class="dropdown w-100 mt-2" style="position: absolute;">
+                                        <div class="pe-4 d-flex justify-content-end">
+                                            <a class="dropdown-toggle" data-bs-toggle="dropdown"
+                                                data-bs-auto-close="outside" aria-expanded="false" href="">
+                                                <img src="images/three-dots-vertical.svg" alt="">
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" data-bs-target="">Edit</a></li>
+                                                <li><a class="dropdown-item" data-bs-target="">Info</a></li>
+                                                <li><a class="dropdown-item">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Title and Description-->
+                                    <h2 class="mb-1" style="margin-top: 7px; font-size: 35px;">Task 345</h2>
+                                    <p class="me-4 font-s">Description of task</p>
+                                    <!--Tags of task-->
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 ms-2 tag_scheduled">
+                                            <p class="font-xs text-nowrap mb-1 mt-1 me-1 ms-1">Due: Today</p>
+                                        </div>
+                                        <div class="col-md-6 ms-2 me-2 tag_critical">
+                                            <p class="font-xs text-nowrap mb-1 mt-1 me-1 ms-1">Priority: Critical</p>
+                                        </div>
+                                    </div>
+                                    <!--Progress Bar-->
+                                    <div class="progress" style="border: solid 1px rgba(255, 255, 255, 0.2)"
+                                        role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                            style="width: 25%;">25%</div>
+                                    </div>
+                                    <!--Seperation Line-->
+                                    <div class="d-flex justify-content-center mt-2 mb-2 white_line"></div>
+                                    <!--Image of task-->
+                                    <div class="row d-flex justify-content-center mb-2">
+                                        <img src="images/Administ_Logo.svg" alt="Administ_Logo"
+                                            style="width: 130px; height: auto;">
+                                    </div>
+                                    <div class="row d-flex justify-content-end">
+                                        <button type="button" class="btn btn-success fw-bold w-50 mb-2 me-2"
+                                            style="border: solid 1px rgba(0, 200, 0, 0.628);">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="add_card_id" type="button" class="btn btn-primary">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Reminder Modal -->
+    <div class="modal fade" id="reminder_add_modal_ID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add/Edit Reminder</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="bg_black_solid mb-2" style="border-left: solid 5px rgb(136, 255, 150);">
+                        <form class="ms-2 mb-2" action="none">
+                            <label class="mt-1" for="r_title_input_ID">Title of Reminder:</label><br>
+                            <input class="w-50 mb-2" type="text" id="r_title_input_ID" name="title input"><br>
+                            <label for="r_desc_input_ID">Description of Reminder:</label><br>
+                            <textarea class="w-75" rows="3" type="text" id="r_desc_input_ID"
+                                name="description input"></textarea><br>
+                            <!-- Color Change -->
+                            <label for="r_color_input_ID">Color of task:</label><br>
+                            <select id="r_color_input_ID">
+                                <option value="remind_side_red">Red</option>
+                                <option value="remind_side_orange">Orange</option>
+                                <option value="remind_side_yellow">Yellow</option>
+                                <option value="remind_side_green">Green</option>
+                                <option value="remind_side_blue">Blue</option>
+                                <option value="remind_side_purple">Purple</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="reminder_add_ID" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Info Modal -->
+    <div class="modal fade" id="card_info_modal_ID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Card Info</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div class="modal fade" id="reminderBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Reminder</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="bg_black_solid mb-2" style="border-left: solid 5px rgb(136, 255, 247);">
+                        <form class="ms-2 mb-2" action="none">
+                            <label class="mt-1" for="r_title_input_ID">Title of Reminder:</label><br>
+                            <input class="w-50 mb-2" type="text" id="r_title_input_ID" name="title input"><br>
+                            <label for="r_desc_input_ID">Description of Reminder:</label><br>
+                            <textarea class="w-75" rows="3" type="text" id="r_desc_input_ID"
+                                name="description input"></textarea><br>
+                            <!-- Color Change -->
+                            <label for="r_color_input_ID">Color of task:</label><br>
+                            <select id="r_color_input_ID">
+                                <option value="remind_side_red">Red</option>
+                                <option value="remind_side_orange">Orange</option>
+                                <option value="remind_side_yellow">Yellow</option>
+                                <option value="remind_side_green">Green</option>
+                                <option value="remind_side_blue">Blue</option>
+                                <option value="remind_side_purple">Purple</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
